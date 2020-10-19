@@ -1,0 +1,124 @@
+:root {
+  --red: #E50914;
+  --black: #141414;
+  --gray: #A0A0A0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* base elements */
+
+body {
+  background-color: var(--black);
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo {
+  margin-left: 5px;
+  color: var(--red);
+  font-family: 'Arial Black', Helvetica, sans-serif;
+  font-size: 40px;
+}
+
+header nav a {
+  text-decoration: none;
+  color: var(--gray);
+  margin-right: 10px;
+}
+
+header nav a:hover {
+  color: white;
+}
+
+
+/* main movie */
+
+.main-movie {
+  font-size: 16px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%), url('../img/narcos-backdrop.jpg');
+  height: 400px;
+  background-size: cover;
+  background-position: center 35%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.main-movie .description {
+  margin-top: 10px;
+  margin-bottom: 70px;
+  font-size: 17px;
+  line-height: 25px;
+}
+
+.main-movie .title {
+  margin-top: 15%;
+  font-size: 40px;
+}
+
+.button {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  margin-right: 15px;
+  font-size: 12px;
+  border-radius: 1px;
+  cursor: pointer;
+  transition: .3s ease all;
+}
+
+.button:hover {
+  background-color: white;
+  color: var(--black);
+}
+
+.button i {
+  margin-right: 8px;
+}
+
+
+/* wrapper */
+
+.container {
+  margin-left: 30px;
+  margin-right: 10px;
+}
+
+.main-movie .container {
+  width: 70%;
+}
+
+
+/* image */
+
+.box-movie {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+
+/* carousel */
+
+.carousel-movies {
+  margin-top: 10px;
+}
+
+.item {
+  cursor: grabbing;
+}
