@@ -1,0 +1,124 @@
+:root {
+  --white: #fafafa;
+  --lightblue: #b2dffc;
+  --blue: #0095f6;
+  --facebook-blue: #385185;
+  --black: #262626;
+  --lightgray: #dbdbdb;
+  --gray: #8e8e8e;
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  text-decoration: none;
+}
+
+html, body, #root {
+	height: 100vh;
+}
+
+body {
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+}
+
+.instagram-wrapper {
+  display: flex;
+  align-items: center;
+  width: 55%;
+  height: 100%;
+}
+
+.instagram-phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 85%;
+}
+
+.img-mobile-phone {
+  background-image: url('../img/mobile-phone.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100%;
+  width: 100%;
+}
+
+.instagram-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 50%;
+}
+
+.group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  width: 100%;
+  padding: 1.3rem 0;
+  border: 1px solid var(--lightgray);
+}
+
+.button-instagram-login {
+  background-color: var(--lightblue);
+  color: white;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.no-account {
+  color: var(--gray);
+}
+
+.sing-up {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.get-the-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1.3rem 0;
+}
+
+.p-get-the-app {
+  font-size: 12px;
+}
+
+.download {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem;
+}
+
+.app-download {
+  height: 3rem;
+  width: 10rem;
+  background-size: cover;
+}
+
+.app-download:nth-child(1) {
+  background-image: url('../img/app-store-button.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.app-download:nth-child(2) {
+  background-image: url('../img/google-play-button.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
