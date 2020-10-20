@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico">
   <link rel="stylesheet" href="styles/global.css">
   <title>Instagram</title>
 </head>
@@ -16,26 +17,26 @@
 
     <div class="instagram-options">
       <div class="group">
-        <img src="./img/instagram-name.png" class="instagram-name" alt="Instagram name">
+        <div class="instagram-name"></div>
         
-        <div class="login-input">
-          <input type="Phone number, username, or email">
-          <input type="Password">
+        <form>
+          <input placeholder="Phone number, username, or email">
+          <input type="password" placeholder="Password">
+          <button>Log in</button>
+        </form>
+
+        <div class="division">
+          <hr>
+          <p>OR</p>
+          <hr>
         </div>
         
-        <button class="button-instagram-login">Log in</button>
-
-        <div class="line"></div>
-        <p class="or">OR</p>
-        <div class="line"></div>
-
         <a href="#" class="login-with-facebook">Log in with Facebook</a>
         <a href="#" class="forgot-password">Forgot password?</a>
       </div>
 
-      <div class="group">
-        <p class="no-account">Don't have an account?</p>
-        <a href="#" class="sing-up">Sign up</a>
+      <div class="group bottom">
+        <p class="no-account">Don't have an account? <a href="#" class="sing-up">Sign up</a></p>
       </div>
 
       <dic class="get-the-app">
