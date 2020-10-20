@@ -3,4 +3,5 @@
 This repository contains the exercises of the [Digital Innovation One](https://digitalinnovation.one/) front-end, back-end and mobile courses done by me. :student:
 
 - [Snake: The Game](https://dio-snake-the-game.netlify.app/) – version of the famous Snake: The Game;
-- [Netflix Homepage](https://dio-netflix-homepage.netlify.app/) – Simple Netflix's homepage clone.
+- [Netflix Homepage](https://dio-netflix-homepage.netlify.app/) – Simple Netflix's homepage clone;
+- [Instagram's landing page](https://dio-instagram-landing-page.netlify.app) – Instagram's landing page clone.
