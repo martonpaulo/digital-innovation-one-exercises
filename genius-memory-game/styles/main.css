@@ -1,0 +1,79 @@
+:root {
+  --light-blue: rgb(208, 255, 239);
+  --green: rgb(18, 119, 86);
+  --red: rgb(173, 54, 62);
+  --yellow: rgb(212, 209, 27);
+  --blue: rgb(30, 49, 216);
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body {
+  background-color: var(--light-blue);
+}
+
+.main-game {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.genius {
+  display: grid;
+  grid-template-areas: 'green-area red-area' 'yellow-area blue-area';
+  grid-gap: 10px;
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 100%;
+  width: 50vh;
+  min-width: 300px;
+  height: 50vh;
+  min-height: 300px;
+}
+
+.green {
+  grid-area: green-area;
+  background-color: var(--green);
+  border-top-left-radius: 100%;
+}
+
+.red {
+  grid-area: red-area;
+  background-color: var(--red);
+  border-top-right-radius: 100%;
+}
+
+.yellow {
+  grid-area: yellow-area;
+  background-color: var(--yellow);
+  border-bottom-left-radius: 100%;
+}
+
+.blue {
+  grid-area: blue-area;
+  background-color: var(--blue);
+  border-bottom-right-radius: 100%;
+}
+
+.green,
+.yellow,
+.red,
+.blue {
+  cursor: pointer;
+}
+
+.selected {
+  opacity: 0.5;
+}
+
+a {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
