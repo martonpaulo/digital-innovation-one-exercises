@@ -1,6 +1,8 @@
 let order = [];
 let clickedOrder = [];
 let score = 0;
+let gameStarted = false;
+let isGameOver = false;
 
 // 0 - green
 // 1 - red
@@ -12,6 +14,10 @@ const red = document.querySelector('.red');
 const yellow = document.querySelector('.yellow');
 const blue = document.querySelector('.blue');
 
+const menu = document.querySelector('.menu');
+const startButton = document.querySelector('.start-button');
+
+
 let shuffleOrder = () => {
   let colorOrder = Math.floor(Math.random() * 4);
   order[order.length] = colorOrder;
@@ -22,6 +28,7 @@ let shuffleOrder = () => {
     lightColor(order[i], elementColor, Number(i) + 1);
   }
 }
+
 
 let lightColor = (color, element, number) => {
   number *= 500;
@@ -38,29 +45,42 @@ let lightColor = (color, element, number) => {
   }, number - time);
 }
 
+
 let checkOrder = () => {
   for (let i in clickedOrder) {
     if (clickedOrder[i] != order[i]) {
+      isGameOver = true;
       gameOver();
       break;
     }
   }
-  if (clickedOrder.length == order.length) {
-    alert(`Score: ${score}\nVocê acertou! Iniciando próximo nível!`);
-    nextLevel();
+
+  if (!isGameOver && clickedOrder.length == order.length) {
+    const oldScore = document.querySelector('.score-text');
+    menu.removeChild(oldScore);
+    createScoreMenu();
+    
+    sleep(2000).then(() => {
+      nextLevel();
+    });
   }
 }
 
+
 let click = (color) => {
-  clickedOrder[clickedOrder.length] = color;
-  createColorElement(color).classList.add('selected');
   playBeep(color);
 
-  setTimeout(() => {
-    createColorElement(color).classList.remove('selected');
-    checkOrder();
-  }, 250);
+  if (gameStarted) {
+    clickedOrder[clickedOrder.length] = color;
+    createColorElement(color).classList.add('selected');
+  
+    setTimeout(() => {
+      createColorElement(color).classList.remove('selected');
+      checkOrder();
+    }, 250);
+  }
 }
+
 
 let createColorElement = (color) => {
   if (color == 0) return green;
@@ -69,24 +89,63 @@ let createColorElement = (color) => {
   else if (color == 3) return blue;
 }
 
+
 let nextLevel = () => {
   score++;
+  
   shuffleOrder();
 }
 
-let gameOver = () => {
-  alert(`Score: ${score}.\nGame over!\nReload the game.`);
-  order = [];
-  clickedOrder = [];
 
-  playGame();
+let gameOver = () => {
+  for (let i = 0; i < 4; i++) {
+    sleep(i * 150).then(() => {
+      playBeep(3 - i);
+    });
+  }
+
+  sleep(1000).then(() => {
+    alert(`Game over!\nScore: ${score - 1}\nReload the page.`);
+    window.location.reload();
+  });
 }
+
+
+let sleep = (ms) => {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
+let createScoreMenu = () => {
+  const scoreP = document.createElement('p');
+  const scoreText = document.createTextNode(`Score: ${score}`);
+  scoreP.className += ' score-text';
+  
+  scoreP.appendChild(scoreText);
+  menu.appendChild(scoreP);
+}
+
 
 let playGame = () => {
-  alert('Welcome to Genius! Initializing new game...');
-  score = 0;
-  nextLevel();
+  gameStarted = true;
+
+  for (let i = 0; i < 4; i++) {
+    sleep(i * 150).then(() => {
+      playBeep(i);
+    });
+  }
+
+  sleep(1500).then(() => {
+    score = 0;
+    menu.removeChild(startButton);
+    createScoreMenu();
+  });
+
+  sleep(2500).then(() => {
+    nextLevel();
+  });
 }
+
 
 function playBeep (color) {
   let audio;
@@ -99,29 +158,11 @@ function playBeep (color) {
   audio.play();
 }
 
-/*
-let createPopUp = () => {
-  const overlay = document.createElement('div');
-  overlay.className = 'overlay';
-  
-  overlay.innerHTML = `
-    <div class="popup">
-      <h2>Here i am</h2>
-      <br />
-      <a class="close" href="#">&times;</a>
-      <div class="content">
-        Thank to pop me out of that button, but now i'm done so you can close this window.
-      </div>
-    </div>
-  `;
-
-  document.getElementById('alerts').appendChild(overlay);
-}
-*/
 
 green.onclick = () => click(0);
 red.onclick = () => click(1);
 yellow.onclick = () => click(2);
 blue.onclick = () => click(3);
 
-playGame();
+
+startButton.onclick = () => playGame();
