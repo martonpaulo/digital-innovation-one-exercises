@@ -17,6 +17,16 @@ const blue = document.querySelector('.blue');
 const menu = document.querySelector('.menu');
 const startButton = document.querySelector('.start-button');
 
+const C = new Audio('./audio/do.wav');
+const D = new Audio('./audio/re.wav');
+const E = new Audio('./audio/mi.wav');
+const F = new Audio('./audio/fa.wav');
+
+C.preload = 'auto';
+D.preload = 'auto';
+E.preload = 'auto';
+F.preload = 'auto';
+
 
 let shuffleOrder = () => {
   let colorOrder = Math.floor(Math.random() * 4);
@@ -148,14 +158,10 @@ let playGame = () => {
 
 
 function playBeep (color) {
-  let audio;
-  
-  if (color == 0) audio = new Audio('./audio/do.wav');
-  else if (color == 1) audio = new Audio('./audio/re.wav');
-  else if (color == 2) audio = new Audio('./audio/mi.wav');
-  else if (color == 3) audio = new Audio('./audio/fa.wav');
-
-  audio.play();
+  if (color == 0) C.play();
+  else if (color == 1) D.play();
+  else if (color == 2) E.play();
+  else if (color == 3) F.play();
 }
 
 
