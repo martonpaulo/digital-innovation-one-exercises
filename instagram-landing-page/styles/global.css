@@ -128,7 +128,7 @@ form > button:focus {
 
 .login-with-facebook {
   color: var(--facebook-blue);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.8rem;
   margin-bottom: 20px;
   display: flex;
@@ -156,7 +156,7 @@ form > button:focus {
 
 .sing-up {
   color: var(--blue);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .get-the-app {
