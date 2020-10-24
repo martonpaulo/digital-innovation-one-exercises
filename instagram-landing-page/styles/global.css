@@ -70,9 +70,10 @@ body {
 }
 
 .instagram-name {
-  background-image: url('../img/instagram-name.png');
+  background-image: url('../img/instagram-name.svg');
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: center;
   height: 60px;
   width: 200px;
   margin-bottom: 30px;
@@ -119,10 +120,10 @@ form > button:focus {
   align-items: center;
 }
 
-hr {
-  height: 0.5px;
+.div-hr {
+  height: 1px;
   width: 40%;
-  background-color: var(--gray);
+  background-color: var(--lightgray);
 }
 
 .login-with-facebook {
