@@ -12,5 +12,8 @@ This repository contains the exercises of the [Digital Innovation One](https://d
 - [Dino Game](https://dio-dino-game.netlify.app) – Google Chrome Dino game version.
 
 ## Pages clones
-- [Netflix Homepage](https://dio-netflix-homepage.netlify.app/) – Simple Netflix's homepage clone;
+- [Netflix Homepage](https://dio-netflix-homepage.netlify.app/) – simple Netflix's homepage clone;
 - [Instagram's landing page](https://dio-instagram-landing-page.netlify.app) – Instagram's landing page clone.
+
+## API consumption
+- [Coin Market](https://dio-coin-market.netlify.app/) – page showing the first 10 coins of the CoinMarketCap API.
