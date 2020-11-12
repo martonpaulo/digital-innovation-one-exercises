@@ -71,12 +71,13 @@ function checkWinner() {
 
   // all squares are filled
   if (checkAllFilled(squares))
-    changeWinner(null);
+    changeWinner('tie');
 
 }
 
 
 function changeWinner (square) {
+  winner = square.innerHTML;
 
   let wrapper = document.querySelector('.wrapper');
   let playerDiv = document.querySelector('.player');
@@ -84,10 +85,10 @@ function changeWinner (square) {
 
   let finalDiv = document.createElement('div');
 
-  if (square != null) {
+  if (square != 'tie') {
     finalDiv.innerHTML = `
       <div class="winner">
-        <label>Winner: ${square.innerHTML}</label>
+        <label>Winner: ${winner}</label>
         <label id="selected-winner"></label>
       </div>
     `;
