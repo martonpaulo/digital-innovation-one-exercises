@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Tic-Tac-Toe</title>
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <h1>TIC TAC TOE</h1>
+
+    <div class="game">
+      <div>
+        <div id="1" class="square hvr-grow" onclick="selectSquare(this.id)">-</div>
+        <div id="2" class="square hvr-grow" onclick="selectSquare(this.id)">-</div>
+        <div id="3" class="square hvr-grow" onclick="selectSquare(this.id)">-</div>
+      </div>
+    
+      <div>
+        <div id="4" class="square hvr-grow" onclick="selectSquare(this.id)">-</div>
+        <div id="5" class="square hvr-grow" onclick="selectSquare(this.id)">-</div>
+        <div id="6" class="square hvr-grow" onclick="selectSquare(this.id)">-</div>
+      </div>
+    
+      <div>
+        <div id="7" class="square hvr-grow" onclick="selectSquare(this.id)">-</div>
+        <div id="8" class="square hvr-grow" onclick="selectSquare(this.id)">-</div>
+        <div id="9" class="square hvr-grow" onclick="selectSquare(this.id)">-</div>
+      </div>
+    </div>
+  
+    <div class="player">
+      <label>Player: </label>
+      <label id="selected-player"></label>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+
+</body>
+
+</html>
