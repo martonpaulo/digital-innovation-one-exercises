@@ -1,6 +1,8 @@
 # Digital Innovation One exercises
 
-This repository contains the exercises of the [Digital Innovation One](https://digitalinnovation.one/) front-end, back-end and mobile courses done by me. :student:
+This repository contains the exercises of the [Digital Innovation One](https://digitalinnovation.one/) front-end, back-end and mobile development courses done by me. :student:
+
+**Click on the links to see them running!** Or a screenshot in the case of a mobile application.
 
 <p align="center">
   <img src="./banner.png" width="30%">
@@ -18,3 +20,6 @@ This repository contains the exercises of the [Digital Innovation One](https://d
 
 ## API consumption
 - [Coin Market](https://dio-coin-market.netlify.app/) – page showing the first 10 coins of the CoinMarketCap API.
+
+## Mobile aplications
+- [iFood Clone](./ifood-clone/screenshot.jpg) – simple iFood (Brazilian food delivery app) clone, using React Native.
